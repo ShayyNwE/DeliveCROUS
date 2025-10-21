@@ -1,12 +1,14 @@
-import { useState } from 'react'
 import './App.css'
-import Navbar from './Components/Navbar/Navbar'
+import Home from './Pages/Home/Home'
+import ProductDetail from './Pages/ProductDetail/ProductDetail'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Home />
+      <ProductDetail />
     </div>
   )
 }
+
 export default App

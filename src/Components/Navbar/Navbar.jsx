@@ -1,44 +1,49 @@
-import { useState } from 'react';
-import './Navbar.css'
-import cartIcon from '../../assets/images/carte-de-shopping.png'
-import defaultUser from '../../assets/images/avatar.png'
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+import cartIcon from '../../assets/images/carte-de-shopping.png';
+import './Navbar.css';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Navbar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
-    const [user, setUser] = useState(null);
-    const handleLogin = () => {
-        if (user) {
-            setUser(null);
-        } else {
-            setUser({
-                name: 'Jean Dupont',
-                photoURL: 'https://randomuser.me/api/portraits/men/75.jpg',
-            });
-        }
-    };
-
-    return (
+  return (
     <div className="navbar">
-        <div className="navContainer">
-            <div className="left">
+      <div className="navContainer">
+        <div className="left">
+          {location.pathname !== '/' && (
             <button
-                id="return"
-                className="return button arrow-button arrow-left"
-                aria-label="Arrow button">
-            </button>
-            </div>
-            <h1 className="titre">DeliveCROUS</h1>
-            <div className="right">
-                    <button className="profileButton" onClick={handleLogin}>
-                        <img
-                            src={user ? user.photoURL : defaultUser}
-                            alt="Profil"/>
-                    </button>
-                <button className="logoShop">
-                    <img src={cartIcon}/>
-                </button>
-            </div>
+              id="return"
+              className="return button arrow-button arrow-left"
+              aria-label="Retour"
+              onClick={() => navigate(-1)}
+            ></button>
+          )}
         </div>
+
+        <h1 className="titre">
+          <Link to="/" className="brand-link">DeliveCROUS</Link>
+        </h1>
+
+        <div className="right">
+          {user ? (
+            <>
+              <span className="welcome">Bienvenue {user.name}</span>
+              <button className="navButton" onClick={logout}>Logout</button>
+            </>
+          ) : (
+            <>
+              <Link to="/register" className="navLinkButton">Register</Link>
+              <Link to="/login" className="navLinkButton">Login</Link>
+            </>
+          )}
+
+          <button className="logoShop" aria-label="Panier">
+            <img src={cartIcon} alt="Panier" />
+          </button>
+        </div>
+      </div>
     </div>
-    )
+  );
 }
