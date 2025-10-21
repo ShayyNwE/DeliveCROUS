@@ -1,16 +1,44 @@
-# React + Vite
+# 🥐 DeliveCROUS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DeliveCROUS** est une application web développée en **React** qui permet aux étudiants de commander, suivre et gérer leurs repas du CROUS via une interface moderne et intuitive.
 
-Currently, two official plugins are available:
+---
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Installation et lancement
 
-## React Compiler
+### 1️⃣ Cloner le projet
+```bash
+git clone https://github.com/Shayy_NwE/DeliveCROUS.git
+cd DeliveCROUS
+npm install
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+### Section 3
+```markdown
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧱 Stack technique
+
+| Technologie | Rôle |
+|------------|------|
+| ⚛️ **React** | Framework principal pour la création de composants |
+| ⚡ **Vite**  | Bundler rapide pour le développement |
+| 🎨 **CSS3** | Gestion du style (Navbar, boutons, etc.) |
+| 🧠 **Hooks React** | Gestion des états et interactions utilisateur |
+| 🖼️ **Assets locaux** | Icônes et images dans `src/assets/images`
+
+---
+
+## 🧰 Scripts disponibles
+
+Dans le répertoire du projet, tu peux exécuter :
+
+| Commande        | Action                          |
+|-----------------|---------------------------------|
+| `npm run dev`   | Lance le serveur de développement |
+| `npm run build` | Compile l’application pour la production |
+| `npm run preview` | Prévisualise la version buildée |
+
