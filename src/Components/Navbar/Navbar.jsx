@@ -2,11 +2,13 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import cartIcon from '../../assets/images/carte-de-shopping.png';
 import './Navbar.css';
 import { useAuth } from '../../context/AuthContext';
+import { useCart } from '../../context/CartContext';
 
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const { count } = useCart();
 
   return (
     <div className="navbar">
@@ -39,9 +41,10 @@ export default function Navbar() {
             </>
           )}
 
-          <button className="logoShop" aria-label="Panier">
+          <Link to="/cart" className="cartButton" aria-label="Panier">
             <img src={cartIcon} alt="Panier" />
-          </button>
+            {count > 0 && <span className="cartBadge">{count}</span>}
+          </Link>
         </div>
       </div>
     </div>

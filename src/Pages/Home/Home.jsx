@@ -27,7 +27,7 @@ export default function Home() {
     <div className="home">
       <Navbar />
       <main className="home-content">
-        <h2 className="section-title">Nos produits</h2>
+        <h2 className="section-title">La carte</h2>
 
         <div className="product-list">
           {products.map(product => (

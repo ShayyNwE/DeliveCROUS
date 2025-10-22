@@ -4,6 +4,7 @@ import ProductDetailCard from '../../components/ProductDetailCard/ProductDetailC
 import Croissant from '../../assets/images/Croissant.webp'
 import Cafe from '../../assets/images/cafe.webp'
 import { useParams } from 'react-router-dom'
+import { useCart } from '../../context/CartContext'
 
 const products = [
   {
@@ -27,20 +28,29 @@ const products = [
 export default function ProductDetail() {
   const { id } = useParams()
   const product = products.find(p => p.id === Number(id))
+  const { addItem } = useCart()
 
   if (!product) return <p>Produit introuvable</p>
+
+  const handleAdd = () => {
+    addItem(
+      { id: product.id, image: product.image, title: product.title, price: product.price },
+      1
+    )
+  }
 
   return (
     <div className="product-detail-page">
       <Navbar />
       <main>
         <ProductDetailCard
+          id={product.id}
           image={product.image}
           title={product.title}
           description={product.description}
           price={product.price}
           allergens={product.allergens}
-          onAddToCart={() => alert(`${product.title} ajouté au panier !`)}
+          onAddToCart={handleAdd}
         />
       </main>
     </div>
