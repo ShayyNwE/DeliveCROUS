@@ -1,9 +1,10 @@
 import './Home.css'
-import Navbar from '../../components/Navbar/Navbar'
-import ProductCard from '../../components/ProductCard/ProductCard'
+import Navbar from '../../Components/Navbar/Navbar'
+import ProductCard from '../../Components/ProductCard/ProductCard'
 import { Link } from 'react-router-dom'
 import Croissant from '../../assets/images/Croissant.webp'
 import Cafe from '../../assets/images/cafe.webp'
+import Pain from '../../assets/images/Pain.jpg'
 
 const products = [
   {
@@ -11,7 +12,7 @@ const products = [
     image: Croissant,
     title: 'Croissant au beurre',
     description: 'Un délicieux croissant croustillant et doré.',
-    price: '1.20'
+    price: '0.80'
   },
   {
     id: 2,
@@ -19,6 +20,13 @@ const products = [
     title: 'Café chaud',
     description: 'Un bon café pour bien démarrer la journée.',
     price: '1.00'
+  },
+  {
+    id: 3,
+    image: Pain,
+    title: 'Paint au chocolat',
+    description: 'Un délicieux pain au chocolat doré.',
+    price: '0.90'
   }
 ]
 
