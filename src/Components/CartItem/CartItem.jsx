@@ -11,6 +11,8 @@ export default function CartItem({
 }) {
   const inc = () => onQtyChange(id, qty + 1);
   const dec = () => onQtyChange(id, Math.max(1, qty - 1));
+  
+  const totalPrice = Number(price) * qty;
 
   return (
     <li className="cart-item">
@@ -19,7 +21,7 @@ export default function CartItem({
         <h3 className="cart-item_title">{title}</h3>
 
         <div className="cart-item_meta">
-          <span className="cart-item_price">{Number(price).toFixed(2)} €</span>
+          <span className="cart-item_price">{totalPrice.toFixed(2)} €</span>
 
           <div className="cart-item_qty" role="group" aria-label={`Quantité de ${title}`}>
             {qty === 1 ? (

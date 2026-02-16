@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import ProductDetailCard from '../../components/ProductDetailCard/ProductDetailCard'
 import Croissant from '../../assets/images/Croissant.webp'
 import Cafe from '../../assets/images/cafe.webp'
+import pain from '../../assets/images/pain.jpg'
 import { useParams } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 
@@ -22,6 +23,14 @@ const products = [
     description: 'Un bon café chaud pour bien commencer la journée.',
     price: '1.00',
     allergens: [],
+  },
+  {
+    id: 3,
+    image: pain,
+    title: 'Pain au chocolat',
+    description: 'Un délicieux pain au chocolat doré',
+    price: '0.90',
+    allergens: ['Gluten',"Lactose","Œufs","Cacao"],
   }
 ]
 
